@@ -1,4 +1,5 @@
-Summary:	Enlightenment Fundation Libraries - embryo
+Summary:	Enlightenment Fundation Libraries - Embryo
+Summary(pl):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
 Version:	0.9.1
 %define	_snap	20050105
@@ -18,21 +19,33 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Embryo is a tiny library designed as a virtual machine to interpret a
 limited set of small compiled programs.
 
+%description -l pl
+Embryo to ma³a biblioteka zaprojektowana jako maszyna wirtualna do
+interpretowania ograniczonego zbioru ma³ych skompilowanych programów.
+
 %package devel
-Summary:	Embryo headers, documentation and test programs
+Summary:	Embryo header files
+Summary(pl):	Pliki nag³ówkowe Embryo
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Headers, test programs and documentation for Embryo.
+Header files for Embryo.
+
+%description devel -l pl
+Pliki nag³ówkowe Embryo.
 
 %package static
-Summary:	Static libraries
+Summary:	Static Embryo library
+Summary(pl):	Statyczna biblioteka Embryo
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static libraries.
+Static Embryo library.
+
+%description static -l pl
+Statyczna biblioteka Embryo.
 
 %prep
 %setup -q -n %{name}
@@ -48,6 +61,7 @@ Static libraries.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -60,19 +74,18 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING* README
-%attr(755,root,root) %{_libdir}/libembryo.so.*
 %attr(755,root,root) %{_bindir}/embryo_cc
 %attr(755,root,root) %{_bindir}/embryo
+%attr(755,root,root) %{_libdir}/libembryo.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libembryo.la
-%attr(755,root,root) %{_libdir}/libembryo.so
 %attr(755,root,root) %{_bindir}/embryo-config
+%attr(755,root,root) %{_libdir}/libembryo.so
+%{_libdir}/libembryo.la
+%{_includedir}/Embryo*
 %{_datadir}/%{name}
 %{_pkgconfigdir}/embryo.pc
-%{_includedir}/Embryo*
-
 
 %files static
 %defattr(644,root,root,755)
