@@ -1,12 +1,12 @@
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	0.9.1.018
+Version:	0.9.1.019
 Release:	1
 License:	BSD
 Group:		X11/Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	8d94586f64306bed42f6147cf63d6ee2
+# Source0-md5:	65ebb45a77994900f52892eacac82e39
 URL:		http://enlightenment.org/Libraries/Embryo/
 BuildRequires:	autoconf
 BuildRequires:	automake
