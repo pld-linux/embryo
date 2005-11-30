@@ -1,12 +1,16 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	0.9.1.019
+Version:	0.9.1.020
 Release:	1
 License:	BSD
 Group:		X11/Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	65ebb45a77994900f52892eacac82e39
+# Source0-md5:	26e13a2dbdebe34c212a92f6e76f0a07
 URL:		http://enlightenment.org/Libraries/Embryo/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -54,7 +58,8 @@ Statyczna biblioteka Embryo.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -85,6 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_pkgconfigdir}/embryo.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libembryo.a
+%endif
