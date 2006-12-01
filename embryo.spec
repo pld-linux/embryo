@@ -5,12 +5,12 @@
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	0.9.1.032
+Version:	0.9.1.036
 Release:	1
 License:	BSD
 Group:		X11/Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	41e81058f1b839575a29ef4ac2157a35
+# Source0-md5:	40900f5441a3b050de694b68da520f38
 URL:		http://enlightenment.org/Libraries/Embryo/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -55,6 +55,11 @@ Statyczna biblioteka Embryo.
 %setup -q
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	%{!?with_static_libs:--disable-static}
 %{__make}
@@ -75,7 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING COPYING-PLAIN INSTALL README
 %attr(755,root,root) %{_bindir}/embryo_cc
-%attr(755,root,root) %{_bindir}/embryo
 %attr(755,root,root) %{_libdir}/libembryo.so.*.*.*
 
 %files devel
