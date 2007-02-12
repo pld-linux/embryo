@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Enlightenment Fundation Libraries - Embryo
-Summary(pl.UTF-8):   Podstawowe biblioteki Enlightenmenta - Embryo
+Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
 Version:	0.9.1.036
 Release:	2
@@ -29,7 +29,7 @@ interpretowania ograniczonego zbioru małych skompilowanych programów.
 
 %package devel
 Summary:	Embryo header files
-Summary(pl.UTF-8):   Pliki nagłówkowe Embryo
+Summary(pl.UTF-8):	Pliki nagłówkowe Embryo
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -41,7 +41,7 @@ Pliki nagłówkowe Embryo.
 
 %package static
 Summary:	Static Embryo library
-Summary(pl.UTF-8):   Statyczna biblioteka Embryo
+Summary(pl.UTF-8):	Statyczna biblioteka Embryo
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
