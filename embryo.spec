@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Enlightenment Fundation Libraries - Embryo
-Summary(pl):	Podstawowe biblioteki Enlightenmenta - Embryo
+Summary(pl.UTF-8):   Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
 Version:	0.9.1.036
 Release:	2
@@ -23,32 +23,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Embryo is a tiny library designed as a virtual machine to interpret a
 limited set of small compiled programs.
 
-%description -l pl
-Embryo to ma³a biblioteka zaprojektowana jako maszyna wirtualna do
-interpretowania ograniczonego zbioru ma³ych skompilowanych programów.
+%description -l pl.UTF-8
+Embryo to maÅ‚a biblioteka zaprojektowana jako maszyna wirtualna do
+interpretowania ograniczonego zbioru maÅ‚ych skompilowanych programÃ³w.
 
 %package devel
 Summary:	Embryo header files
-Summary(pl):	Pliki nag³ówkowe Embryo
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe Embryo
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for Embryo.
 
-%description devel -l pl
-Pliki nag³ówkowe Embryo.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe Embryo.
 
 %package static
 Summary:	Static Embryo library
-Summary(pl):	Statyczna biblioteka Embryo
+Summary(pl.UTF-8):   Statyczna biblioteka Embryo
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static Embryo library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka Embryo.
 
 %prep
