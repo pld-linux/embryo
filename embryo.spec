@@ -5,15 +5,15 @@
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	0.9.1.036
-Release:	2
+Version:	0.9.1.038
+Release:	1
 License:	BSD
 Group:		X11/Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	40900f5441a3b050de694b68da520f38
+# Source0-md5:	f044bf2bc2e668784528a705aa290e4a
 URL:		http://enlightenment.org/Libraries/Embryo/
 BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	automake >= 1.4
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -78,17 +78,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING COPYING-PLAIN INSTALL README
+%doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/embryo_cc
 %attr(755,root,root) %{_libdir}/libembryo.so.*.*.*
+# for embryo_cc
+%{_datadir}/%{name}
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/embryo-config
 %attr(755,root,root) %{_libdir}/libembryo.so
 %{_libdir}/libembryo.la
-%{_includedir}/Embryo*
-%{_datadir}/%{name}
+%{_includedir}/Embryo.h
 %{_pkgconfigdir}/embryo.pc
 
 %if %{with static_libs}
