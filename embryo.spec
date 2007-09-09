@@ -11,7 +11,7 @@ License:	BSD
 Group:		X11/Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
 # Source0-md5:	f044bf2bc2e668784528a705aa290e4a
-URL:		http://enlightenment.org/Libraries/Embryo/
+URL:		http://enlightenment.org/p.php?p=about/libs/embryo
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.4
 BuildRequires:	libtool
