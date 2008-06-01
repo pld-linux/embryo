@@ -86,7 +86,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-#%attr(755,root,root) %{_bindir}/embryo-config
 %attr(755,root,root) %{_libdir}/libembryo.so
 %{_libdir}/libembryo.la
 %{_includedir}/Embryo.h
