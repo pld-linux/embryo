@@ -8,12 +8,12 @@ Name:		embryo
 Version:	0.9.9.043
 Release:	1
 License:	BSD
-Group:		X11/Libraries
+Group:		Libraries
 Source0:	http://download.enlightenment.org/snapshots/2008-05-19/%{name}-%{version}.tar.bz2
 # Source0-md5:	532f34d44a558e49ad9afbfd0f82489f
 URL:		http://enlightenment.org/p.php?p=about/libs/embryo
-BuildRequires:	autoconf
-BuildRequires:	automake >= 1.4
+BuildRequires:	autoconf >= 2.52
+BuildRequires:	automake >= 1.6
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -80,7 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/embryo_cc
-%attr(755,root,root) %{_libdir}/libembryo.so.*
+%attr(755,root,root) %{_libdir}/libembryo.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libembryo.so.0
 # for embryo_cc
 %{_datadir}/%{name}
 
