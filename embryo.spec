@@ -2,15 +2,16 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
+%define		_snap	20080813
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	0.9.9.043
-Release:	1
+Version:	0.9.9.044
+Release:	0.%{_snap}.1
 License:	BSD
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/2008-05-19/%{name}-%{version}.tar.bz2
-# Source0-md5:	532f34d44a558e49ad9afbfd0f82489f
+Source0:	%{name}-%{version}-%{_snap}.tar.bz2
+# Source0-md5:	209c22bb70e6ab9c23062c2fd9ba807e
 URL:		http://enlightenment.org/p.php?p=about/libs/embryo
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -52,7 +53,7 @@ Static Embryo library.
 Statyczna biblioteka Embryo.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_snap}
 
 %build
 %{__libtoolize}
