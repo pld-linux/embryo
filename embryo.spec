@@ -52,7 +52,7 @@ Static Embryo library.
 Statyczna biblioteka Embryo.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %{__libtoolize}
