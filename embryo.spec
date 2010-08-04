@@ -2,15 +2,16 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
+%define	snapdate	2010-06-27
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	0.9.9.050
+Version:	0.9.9.49898
 Release:	0.1
-License:	BSD
+License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/2008-09-25/%{name}-%{version}.tar.bz2
-# Source0-md5:	6c56918b4808b7486e485e9a94d974fa
+Source0:	http://download.enlightenment.org/snapshots/%{snapdate}/%{name}-%{version}.tar.bz2
+# Source0-md5:	4b46ede6d03f6b53d4cfeb852513a374
 URL:		http://enlightenment.org/p.php?p=about/libs/embryo
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -55,14 +56,15 @@ Statyczna biblioteka Embryo.
 %setup -q
 
 %build
+rm -f ltmain.sh
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
 %configure \
 	%{!?with_static_libs:--disable-static}
-%{__make}
+%{__make} V=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -80,8 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/embryo_cc
-%attr(755,root,root) %{_libdir}/libembryo.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libembryo.so.0
+%attr(755,root,root) %{_libdir}/libembryo-ver-svn-06.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libembryo-ver-svn-06.so.0
 # for embryo_cc
 %{_datadir}/%{name}
 
