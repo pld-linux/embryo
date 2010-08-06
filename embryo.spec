@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define	snapdate	2010-06-27
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
@@ -10,7 +9,7 @@ Version:	0.9.9.49898
 Release:	0.1
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/%{snapdate}/%{name}-%{version}.tar.bz2
+Source0:	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
 # Source0-md5:	4b46ede6d03f6b53d4cfeb852513a374
 URL:		http://enlightenment.org/p.php?p=about/libs/embryo
 BuildRequires:	autoconf >= 2.52
