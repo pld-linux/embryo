@@ -5,12 +5,13 @@
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	0.9.9.49898
-Release:	0.1
+%define	subver	beta2
+Version:	1.0.0
+Release:	0.%{subver}.1
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
-# Source0-md5:	4b46ede6d03f6b53d4cfeb852513a374
+Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.%{subver}.tar.bz2
+# Source0-md5:	4a156462bb2ce9c10186b7657f0316c7
 URL:		http://enlightenment.org/p.php?p=about/libs/embryo
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -52,7 +53,7 @@ Static Embryo library.
 Statyczna biblioteka Embryo.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}.%{subver}
 
 %build
 rm -f ltmain.sh
@@ -81,8 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/embryo_cc
-%attr(755,root,root) %{_libdir}/libembryo-ver-svn-06.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libembryo-ver-svn-06.so.0
+%attr(755,root,root) %{_libdir}/libembryo.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libembryo.so.1
 # for embryo_cc
 %{_datadir}/%{name}
 
@@ -90,7 +91,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libembryo.so
 %{_libdir}/libembryo.la
-%{_includedir}/Embryo.h
+%dir %{_includedir}/embryo-1
+%{_includedir}/embryo-1/*.h
 %{_pkgconfigdir}/embryo.pc
 
 %if %{with static_libs}
