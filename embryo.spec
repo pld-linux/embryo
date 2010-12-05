@@ -5,17 +5,18 @@
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-%define	subver	beta2
+%define	subver	beta3
 Version:	1.0.0
 Release:	0.%{subver}.1
-License:	LGPL v2.1
+License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.%{subver}.tar.bz2
-# Source0-md5:	4a156462bb2ce9c10186b7657f0316c7
+# Source0-md5:	20495de8cc2c375cde1a3a98caf919d7
 URL:		http://enlightenment.org/p.php?p=about/libs/embryo
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
 BuildRequires:	libtool
+BuildRequires:	pkgconfig >= 1:0.22
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %undefine	__cxx
@@ -56,15 +57,15 @@ Statyczna biblioteka Embryo.
 %setup -q -n %{name}-%{version}.%{subver}
 
 %build
-rm -f ltmain.sh
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	%{!?with_static_libs:--disable-static}
-%{__make} V=1
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -80,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING COPYING-PLAIN README
+%doc AUTHORS COPYING README
 %attr(755,root,root) %{_bindir}/embryo_cc
 %attr(755,root,root) %{_libdir}/libembryo.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libembryo.so.1
@@ -91,8 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libembryo.so
 %{_libdir}/libembryo.la
-%dir %{_includedir}/embryo-1
-%{_includedir}/embryo-1/*.h
+%{_includedir}/embryo-1
 %{_pkgconfigdir}/embryo.pc
 
 %if %{with static_libs}
