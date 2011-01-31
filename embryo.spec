@@ -5,13 +5,12 @@
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-%define	subver	beta3
 Version:	1.0.0
-Release:	0.%{subver}.1
+Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.%{subver}.tar.bz2
-# Source0-md5:	20495de8cc2c375cde1a3a98caf919d7
+Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
+# Source0-md5:	12f6c7d1d39c223d412351594a24dc64
 URL:		http://enlightenment.org/p.php?p=about/libs/embryo
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -54,7 +53,7 @@ Static Embryo library.
 Statyczna biblioteka Embryo.
 
 %prep
-%setup -q -n %{name}-%{version}.%{subver}
+%setup -q
 
 %build
 %{__libtoolize}
