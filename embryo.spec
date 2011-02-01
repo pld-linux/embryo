@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING README
+%doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_bindir}/embryo_cc
 %attr(755,root,root) %{_libdir}/libembryo.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libembryo.so.1
