@@ -5,17 +5,19 @@
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	1.0.0
-Release:	2
+Version:	1.1.0
+Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	12f6c7d1d39c223d412351594a24dc64
+# Source0-md5:	cbdedac18afdd0c1a8f3304bcd113410
 URL:		http://trac.enlightenment.org/e/wiki/Embryo
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
+BuildRequires:	eina-devel >= 1.1.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
+Requires:	eina >= 1.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %undefine	__cxx
@@ -80,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README
+%doc AUTHORS COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/embryo_cc
 %attr(755,root,root) %{_libdir}/libembryo.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libembryo.so.1
