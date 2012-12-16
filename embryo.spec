@@ -5,12 +5,12 @@
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	1.7.2
+Version:	1.7.3
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	eef5945a761a8834d18659c8f288c149
+# Source0-md5:	63f54f68412265781fc9911973e7cd38
 URL:		http://trac.enlightenment.org/e/wiki/Embryo
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
