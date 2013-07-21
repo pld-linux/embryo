@@ -5,19 +5,19 @@
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	1.7.6
+Version:	1.7.7
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	0c2648f296263db10982f5349bc872a7
+# Source0-md5:	bdacbbf223e3248b9ca72fc5c4ea409e
 URL:		http://trac.enlightenment.org/e/wiki/Embryo
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
-BuildRequires:	eina-devel >= 1.7.6
+BuildRequires:	eina-devel >= 1.7.7
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
-Requires:	eina >= 1.7.6
+Requires:	eina >= 1.7.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %undefine	__cxx
@@ -35,7 +35,7 @@ Summary:	Embryo header files
 Summary(pl.UTF-8):	Pliki nagłówkowe Embryo
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	eina-devel >= 1.7.6
+Requires:	eina-devel >= 1.7.7
 
 %description devel
 Header files for Embryo.
