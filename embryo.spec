@@ -3,22 +3,23 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
+%define	eina_ver	1.7.10
 Summary:	Enlightenment Fundation Libraries - Embryo
 Summary(pl.UTF-8):	Podstawowe biblioteki Enlightenmenta - Embryo
 Name:		embryo
-Version:	1.7.9
+Version:	1.7.10
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	f62c244cabc97660a40aa11ab9d84ee3
+# Source0-md5:	1ed477bcc75124a143b4d86bea02c671
 URL:		http://trac.enlightenment.org/e/wiki/Embryo
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
-BuildRequires:	eina-devel >= 1.7.9
+BuildRequires:	eina-devel >= %{eina_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
-Requires:	eina >= 1.7.9
+Requires:	eina >= %{eina_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %undefine	__cxx
@@ -36,7 +37,7 @@ Summary:	Embryo header files
 Summary(pl.UTF-8):	Pliki nagłówkowe Embryo
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	eina-devel >= 1.7.9
+Requires:	eina-devel >= %{eina_ver}
 
 %description devel
 Header files for Embryo.
